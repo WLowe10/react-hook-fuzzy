@@ -2,6 +2,10 @@
   "name": "react-hook-fuzzy",
   "version": "1.0.0",
   "description": "React hook to easily implement fuzzy search",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WLowe10/react-hook-fuzzy"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {

@@ -8,9 +8,9 @@ type FuzzyReturnType<T> = {
     search: (query: string) => void,
 };
 
-type OptionsType<T> = { allOnEmpty?: boolean } & FuzzyOptions;
+type OptionsType = { allOnEmpty?: boolean } & FuzzyOptions;
 
-export const useFuzzy = <T extends object>(items: Array<T>, keys: Array<string>, options?: OptionsType<T>): FuzzyReturnType<T> => {
+export const useFuzzy = <T extends object>(items: Array<T>, keys: Array<string>, options?: OptionsType): FuzzyReturnType<T> => {
     const fuzzyOptions = { sort: options?.sort, caseSensitive: options?.caseSensitive };
     const [term, setTerm] = useState<string>("");
     const fuzzy = useMemo(() => new FuzzySearch(items, keys, fuzzyOptions), [items, keys, options]);
