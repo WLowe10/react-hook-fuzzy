@@ -8,7 +8,7 @@ type FuzzyReturnType<T> = {
     search: (query: string) => void,
 };
 
-type OptionsType = { allOnEmpty?: boolean } & FuzzyOptions;
+type OptionsType = { allOnEmpty?: boolean, sort?: boolean, caseSensitive?: boolean };
 
 export const useFuzzy = <T extends object>(items: Array<T>, keys: Array<string>, options?: OptionsType): FuzzyReturnType<T> => {
     const fuzzyOptions = { sort: options?.sort, caseSensitive: options?.caseSensitive };
